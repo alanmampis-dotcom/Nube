@@ -44,7 +44,10 @@ function TwoFactorAuth({ onVerify, onCancel }) {
                         key={idx}
                         ref={el => inputs.current[idx] = el}
                         type="text"
+                        inputMode="numeric"
+                        autoComplete="one-time-code"
                         maxLength="1"
+                        aria-label={`Dígito ${idx + 1} de autenticación`}
                         value={digit}
                         onChange={(e) => handleChange(idx, e.target.value)}
                         onKeyDown={(e) => handleKeyDown(idx, e)}
@@ -55,6 +58,7 @@ function TwoFactorAuth({ onVerify, onCancel }) {
 
             <div className="flex flex-col gap-3">
                 <button 
+                    type="button"
                     onClick={() => onVerify(code.join(''))}
                     className="btn-primary w-full py-3"
                 >

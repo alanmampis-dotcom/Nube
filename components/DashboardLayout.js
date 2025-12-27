@@ -143,6 +143,7 @@ function DashboardLayout() {
                         <div className="relative hidden sm:block">
                             <input 
                                 type="text" 
+                                aria-label="Buscar archivos"
                                 placeholder="Buscar archivos..." 
                                 onChange={handleSearch}
                                 className="pl-10 pr-4 py-2 bg-gray-100 border-none rounded-lg text-sm focus:ring-2 focus:ring-[var(--primary-color)] w-64 transition-all"

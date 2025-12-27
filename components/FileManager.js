@@ -83,6 +83,7 @@ function FileManager({ folders, onAddFolder, onUpdateFolder, onDeleteFolder }) {
                 </h2>
                 <div className="flex items-center gap-2">
                     <button 
+                        type="button"
                         onClick={() => setIsCreatingFolder(true)}
                         className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg font-medium transition-colors"
                     >
@@ -90,6 +91,7 @@ function FileManager({ folders, onAddFolder, onUpdateFolder, onDeleteFolder }) {
                         <span>Nueva Carpeta</span>
                     </button>
                     <button 
+                        type="button"
                         onClick={handleFileUpload}
                         className="flex items-center gap-2 px-4 py-2 bg-[var(--primary-color)] hover:bg-[var(--primary-hover)] text-white rounded-lg font-medium transition-colors shadow-sm"
                     >

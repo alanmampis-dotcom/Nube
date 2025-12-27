@@ -60,7 +60,7 @@ function FolderSettingsModal({ folder, isOpen, onClose, onSave }) {
                         <div className="icon-settings text-gray-500"></div>
                         Configuración de Carpeta
                     </h3>
-                    <button onClick={onClose} className="text-gray-400 hover:text-gray-600 p-1 rounded-full hover:bg-gray-200 transition-colors">
+                    <button type="button" onClick={onClose} aria-label="Cerrar modal" className="text-gray-400 hover:text-gray-600 p-1 rounded-full hover:bg-gray-200 transition-colors">
                         <div className="icon-x"></div>
                     </button>
                 </div>
@@ -68,6 +68,7 @@ function FolderSettingsModal({ folder, isOpen, onClose, onSave }) {
                 {/* Tabs */}
                 <div className="flex border-b border-gray-100">
                     <button 
+                        type="button"
                         onClick={() => setActiveTab('general')}
                         className={`flex-1 py-3 text-sm font-medium border-b-2 transition-colors ${activeTab === 'general' ? 'border-[var(--primary-color)] text-[var(--primary-color)]' : 'border-transparent text-gray-500 hover:text-gray-700'}`}
                     >

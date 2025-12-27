@@ -65,6 +65,9 @@ function LoginForm({ onSuccess }) {
                         </div>
                         <input 
                             type="email" 
+                            name="email"
+                            id="email"
+                            autoComplete="username"
                             required
                             className="w-full px-4 py-3 pl-10 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/50 focus:bg-white/20 focus:ring-2 focus:ring-white/50 focus:border-white/50 outline-none transition-all duration-200 font-bold backdrop-blur-sm"
                             placeholder="usuario@securecloud.com"
@@ -75,13 +78,16 @@ function LoginForm({ onSuccess }) {
                 </div>
 
                 <div>
-                    <label className="block text-sm font-bold text-white mb-2 drop-shadow-sm">Contraseña</label>
+                    <label htmlFor="password" className="block text-sm font-bold text-white mb-2 drop-shadow-sm">Contraseña</label>
                     <div className="relative group">
                         <div className="absolute left-3 top-1/2 -translate-y-1/2 text-white/70 group-focus-within:text-white transition-colors">
                             <div className="icon-lock text-lg"></div>
                         </div>
                         <input 
                             type={showPassword ? "text" : "password"}
+                            name="password"
+                            id="password"
+                            autoComplete="current-password"
                             required
                             className="w-full px-4 py-3 pl-10 pr-10 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/50 focus:bg-white/20 focus:ring-2 focus:ring-white/50 focus:border-white/50 outline-none transition-all duration-200 font-bold backdrop-blur-sm"
                             placeholder="••••••••••"
