@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureCloud - Acceso Seguro</title>
+    <meta name="description" content="Plataforma de gestión en la nube segura con autenticación de dos pasos.">
+
+    <!-- React & ReactDOM -->
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- Babel -->
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
+    <script>
+        // Prevent Chart.js conflicts
+        const ChartJS = window.Chart;
+    </script>
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #d92828; /* Mega-like Red */
+            --primary-hover: #b01e1e;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-main: #111827;
+            --text-secondary: #6b7280;
+        }
+    }
+
+    @layer components {
+        .btn-primary {
+            @apply bg-[var(--primary-color)] text-white px-4 py-2 rounded-lg hover:bg-[var(--primary-hover)] transition-colors duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed;
+        }
+        .input-field {
+            @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent outline-none transition-all duration-200;
+        }
+        .card {
+            @apply bg-[var(--card-bg)] rounded-xl shadow-sm border border-gray-100 p-6;
+        }
+    }
+
+    @layer utilities {
+        .animation-delay-200 {
+            animation-delay: 200ms;
+        }
+        .animation-delay-400 {
+            animation-delay: 400ms;
+        }
+    }
+    
+    /* Ring Encryption Animation */
+    @keyframes spin-reverse {
+        to { transform: rotate(-360deg); }
+    }
+    @keyframes spin-slow {
+        to { transform: rotate(360deg); }
+    }
+    
+    .ring-spinner {
+        border-radius: 50%;
+        border: 2px solid transparent;
+        border-top-color: var(--primary-color);
+        border-bottom-color: var(--primary-color);
+        animation: spin-slow 3s linear infinite;
+    }
+    .ring-spinner-reverse {
+        border-radius: 50%;
+        border: 2px solid transparent;
+        border-left-color: #4b5563;
+        border-right-color: #4b5563;
+        animation: spin-reverse 2s linear infinite;
+    }
+    </style>
+</head>
+<body class="bg-[var(--bg-color)] text-[var(--text-main)] font-sans antialiased bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072')] bg-cover bg-center bg-no-repeat bg-fixed">
+    <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+    <div id="root" class="relative z-10"></div>
+    
+    <!-- Shared Utils -->
+    <script type="text/babel" src="utils/validation.js"></script>
+    
+    <!-- Components -->
+    <script type="text/babel" src="components/EncryptionRing.js"></script>
+    <script type="text/babel" src="components/TwoFactorAuth.js"></script>
+    <script type="text/babel" src="components/LoginForm.js"></script>
+    
+    <!-- Main App Entry -->
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>

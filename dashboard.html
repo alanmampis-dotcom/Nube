@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureCloud - Panel de Control</title>
+    
+    <!-- React & ReactDOM -->
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- Babel -->
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
+    <script>
+        const ChartJS = window.Chart;
+    </script>
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #d92828;
+            --primary-hover: #b01e1e;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --sidebar-bg: #111827;
+            --sidebar-text: #e5e7eb;
+        }
+    }
+    
+    @layer components {
+        .card {
+            @apply bg-[var(--card-bg)] rounded-xl shadow-sm border border-gray-100 p-6;
+        }
+        .btn-icon {
+            @apply p-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-600;
+        }
+    }
+    </style>
+</head>
+<body class="bg-[var(--bg-color)] font-sans antialiased h-screen overflow-hidden flex">
+    <div id="root" class="w-full h-full"></div>
+    
+    <!-- Components -->
+    <script type="text/babel" src="components/StatCard.js"></script>
+    <script type="text/babel" src="components/StorageChart.js"></script>
+    <script type="text/babel" src="components/FolderSettingsModal.js"></script>
+    <script type="text/babel" src="components/FileManager.js"></script>
+    <script type="text/babel" src="components/DashboardLayout.js"></script>
+    
+    <!-- Dashboard App Entry -->
+    <script type="text/babel" src="dashboard-app.js"></script>
+</body>
+</html>
